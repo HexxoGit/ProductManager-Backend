@@ -1,12 +1,9 @@
 ﻿using Application.DTOs.Product;
-using Application.Features.RemovedProducts.Handlers.CommandHandler;
 using Application.Features.RemovedProducts.Requests.Commands;
 using Application.Features.RemovedProducts.Requests.Queries;
-using Domain.Entities;
 using Infrastructure.ExternalServiceIntegration;
 using MediatR;
 using ProductManagerApi.Abstractions;
-using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text.Json;
 

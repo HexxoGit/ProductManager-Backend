@@ -1,4 +1,5 @@
-﻿namespace Application.DTOs.Product
+﻿
+namespace Application.DTOs.Product
 {
     public class ProductDTO
     {

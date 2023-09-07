@@ -2,11 +2,6 @@
 using Application.Features.RecordCalls.Requests.Commands;
 using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Features.RecordCalls.Handlers.CommandHandler
 {
