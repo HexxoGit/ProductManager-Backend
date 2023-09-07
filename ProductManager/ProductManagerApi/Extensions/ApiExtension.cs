@@ -11,6 +11,9 @@ using Microsoft.IdentityModel.Tokens;
 using MediatR;
 using System.Text;
 using Application.Features.RemovedProducts.Requests.Queries;
+using Application.Features.RecordCalls.Requests.Commands;
+using Application.Features.RecordCalls.Requests.Queries;
+using Infrastructure.Middleware;
 
 namespace ProductManagerApi.Extensions
 {
@@ -22,6 +25,8 @@ namespace ProductManagerApi.Extensions
             builder.Services.AddDbContext<ManagerDbContext>(opt => opt.UseSqlServer(cs));
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRemovedProductRepository, RemovedProductRepository>();
+            builder.Services.AddScoped<ICallRecordRepository, CallRecordRepository>();
+            builder.Services.AddScoped<CallRecordMiddleware>();
             builder.Services.AddHttpClient<ExternalProductsApiService>();
             //builder.Services.AddAuthentication().AddJwtBearer();
 
@@ -57,6 +62,9 @@ namespace ProductManagerApi.Extensions
                 cfg.RegisterServicesFromAssemblyContaining<CreateUser>();
                 cfg.RegisterServicesFromAssemblyContaining<CreateRemovedProduct>();
                 cfg.RegisterServicesFromAssemblyContaining<GetRemovedProductsByUsername>();
+                cfg.RegisterServicesFromAssemblyContaining<CreateCallRecord>();
+                cfg.RegisterServicesFromAssemblyContaining<GetCallRecords>();
+                cfg.RegisterServicesFromAssemblyContaining<GetCallRecordsByUsername>();
             });
         }
 

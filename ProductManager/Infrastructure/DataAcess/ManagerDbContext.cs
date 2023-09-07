@@ -13,5 +13,6 @@ namespace Infrastructure.DataAcess
 
         public DbSet<RemovedProduct> RemovedProducts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<CallRecord> CallRecords { get; set; }
     }
 }

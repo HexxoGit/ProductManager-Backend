@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A2LR0uX0E9ajxEqY5peJu4Q9nDqrU5HTjZRo/00lVWKDyKXytKZf5eyYAmBcVlDUFUGh8iJ7xFY9/IQ3iXrcTQ==",
+  "dgSpecHash": "qFPR/uzRlsM4UXd7af1+TSK30O1zZ0C9iAgKx9EShciGO9S0YXhTpTIVWiSQSJup1wD7gaGJDcab8YBVHSWShw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Eduar\\Desktop\\Git\\ProductManager-Backend\\ProductManager\\ProductManagerApi\\ProductManagerApi.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\Eduar\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.10\\microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
+    "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.2\\microsoft.data.sqlclient.5.0.2.nupkg.sha512",

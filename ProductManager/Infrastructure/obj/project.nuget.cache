@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pARORFMHMCUsMPtsp6VVB+FcVdCwKjdpNQE6WIJE4O6SgOQ5XoHR0ElzjF/rhFkKIYpfDr7S53m7OAsUZU7h4w==",
+  "dgSpecHash": "ewRLIYDtCGUgiMA4xTlVxTfX7KM9AFrkbbiJJRzaWolZewcjQfYExkVV7A+FaHH+HfO3p98cpAlcsot2QoPeZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Eduar\\Desktop\\Git\\ProductManager-Backend\\ProductManager\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Eduar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Eduar\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.2\\microsoft.data.sqlclient.5.0.2.nupkg.sha512",
