@@ -15,25 +15,30 @@ namespace Infrastructure.Middleware
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-            var ip = context.Connection.RemoteIpAddress.ToString();
-            var dateTime = DateTime.Now;
-            var requestMethod = context.Request.Method;
-            var requestPath = context.Request.Path;
-            var userId = 1;
-
-            var callRecord = new CallRecord
+            if (context.Request.Headers.ContainsKey("IpAddress"))
             {
-                IP = ip,
-                DateTime = dateTime,
-                RequestMethod = requestMethod,
-                RequestPath = requestPath,
-                UserId = userId
-            };
+                var ip = context.Connection.RemoteIpAddress.ToString();
+                var dateTime = DateTime.Now;
+                var requestMethod = context.Request.Method;
+                var requestPath = context.Request.Path;
+                var userId = 1;
 
-            _dbContext.CallRecords.Add(callRecord);
-            await _dbContext.SaveChangesAsync();
+                var callRecord = new CallRecord
+                {
+                    IP = ip,
+                    DateTime = dateTime,
+                    RequestMethod = requestMethod,
+                    RequestPath = requestPath,
+                    UserId = userId
+                };
 
-            await next.Invoke(context);
+                _dbContext.CallRecords.Add(callRecord);
+                await _dbContext.SaveChangesAsync();
+
+                await next.Invoke(context);
+            }
+            else
+                await next.Invoke(context);
         }
     }
 }
