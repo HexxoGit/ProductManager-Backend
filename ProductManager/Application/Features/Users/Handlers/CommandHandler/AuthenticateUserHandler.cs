@@ -32,15 +32,14 @@ namespace Application.Features.Users.Handlers.CommandHandler
 
         public string GenerateJwtToken(User user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("6ceccd7405ef4b00b2630009be568cfa91238aewydzt"));
-
-            //var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8
+                .GetBytes("6ceccd7405ef4b00b2630009be568cfa91238aewydzt"));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Issuer = "https://localhost:7037",
                 Audience = "https://localhost:7037",
-                Expires = DateTime.UtcNow.AddMinutes(30),
+                Expires = DateTime.Now.AddMinutes(200),
                 SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature),
                 Subject = new ClaimsIdentity(new Claim[]
                 {

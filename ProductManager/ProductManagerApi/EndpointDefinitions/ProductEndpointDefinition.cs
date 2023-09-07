@@ -24,12 +24,11 @@ namespace ProductManagerApi.EndpointDefinitions
             /*
              * TODO: Refactor ter em conta o nome do utilizador diretamente do token
              */
-            products.MapGet("", async (HttpContext context, ClaimsPrincipal user, ExternalProductsApiService externalProductsApiService,
+            products.MapGet("", async (HttpContext context, /*ClaimsPrincipal user,*/ ExternalProductsApiService externalProductsApiService,
                     decimal? minPrice, decimal? maxPrice, int? minStock, int? maxStock, string? category) =>
             {
-                
                 List<ProductDTO> products = await externalProductsApiService.GetAllProducts(
-                     "FirstUser",minPrice, maxPrice, minStock, maxStock, category);
+                     "FirstUser", minPrice, maxPrice, minStock, maxStock, category);
                 await JsonSerializer.SerializeAsync(context.Response.Body, products);
             });//.RequireAuthorization("ProductManager");
 

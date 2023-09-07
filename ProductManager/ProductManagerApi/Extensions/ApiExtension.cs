@@ -33,19 +33,21 @@ namespace ProductManagerApi.Extensions
             builder.Services.AddAuthentication(config =>
             {
                 config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                //config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                //config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(config =>
             {
-                config.SaveToken = true;
+                config.SaveToken = false;
                 config.RequireHttpsMetadata = false;
                 config.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidIssuer = builder.Configuration.GetSection("Jwt:Issuer").Value,
-                    ValidAudience = builder.Configuration.GetSection("Jwt:Audience").Value,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("6ceccd7405ef4b00b2630009be568cfa91238aewydzt")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    //ValidIssuer = builder.Configuration.GetSection("Jwt:Issuer").Value,
+                    //ValidAudience = builder.Configuration.GetSection("Jwt:Audience").Value,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                        .GetBytes(builder.Configuration.GetSection("Jwt:Token").Value)),
                 };
             });
 
@@ -53,7 +55,7 @@ namespace ProductManagerApi.Extensions
             {
                 options.AddPolicy("ProductManager", policy =>
                 {
-                    policy.RequireClaim("ProductManager");
+                    policy.RequireRole("ProductManager");
                 });
             });
             builder.Services.AddMediatR(cfg =>
