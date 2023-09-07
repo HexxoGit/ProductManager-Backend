@@ -3,8 +3,8 @@ namespace Domain.Entities
 {
     public class RemovedProduct
     {
-        public int RemovedProductId { get; set; }
+        public int Id { get; set; }
+        public int ProductId { get; set; }
         public int UserId { get; set; }
-        public string? ProductName { get; set; }
     }
 }

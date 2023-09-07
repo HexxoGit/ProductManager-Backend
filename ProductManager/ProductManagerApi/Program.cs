@@ -5,8 +5,9 @@ builder.RegisterServices();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+app.UseAuthentication();
 
+app.UseHttpsRedirection();
 app.RegisterEndpointDefinitions();
 
 app.Run();

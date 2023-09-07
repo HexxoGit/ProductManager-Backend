@@ -18,12 +18,12 @@ namespace Infrastructure.DataAcess.Repositories
             return product;
         }
 
-        public Task<ICollection<RemovedProduct>> GetAllRemovedProducts()
+        public Task<ICollection<RemovedProduct>> GetRemovedProducts()
         {
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<RemovedProduct>> GetAllRemovedProductsByUserId(int userId)
+        public Task<ICollection<RemovedProduct>> GetRemovedProductsByUserId(int userId)
         {
             throw new NotImplementedException();
         }

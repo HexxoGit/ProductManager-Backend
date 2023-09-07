@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{6EBA1473-F4EC-4AB6-919D-19DED5B9CE52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6EBA1473-F4EC-4AB6-919D-19DED5B9CE52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{057C3D74-2EB9-4327-8C36-1BA63C57C026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{057C3D74-2EB9-4327-8C36-1BA63C57C026}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{E9187C3E-2948-40F2-8AEA-84476225F561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{E9187C3E-2948-40F2-8AEA-84476225F561}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagerApi", "ProductManagerApi\ProductManagerApi.csproj", "{A26A69C0-6EDC-49FA-ABF8-05DFDCA6E917}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManagerApi", "ProductManagerApi\ProductManagerApi.csproj", "{A26A69C0-6EDC-49FA-ABF8-05DFDCA6E917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

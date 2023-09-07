@@ -1,5 +1,17 @@
-﻿using Infrastructure.ExternalServiceIntegration;
+﻿using Application.Abstractions;
+using Infrastructure.DataAcess.Repositories;
+using Infrastructure.DataAcess;
+using Infrastructure.ExternalServiceIntegration;
+using Microsoft.EntityFrameworkCore;
 using ProductManagerApi.Abstractions;
+using Infrastructure.Services;
+using Application.Features.RemovedProducts.Requests.Commands;
+using Microsoft.Extensions.DependencyInjection;
+using Application.Features.Users.Request.Commands;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using MediatR;
+using System.Reflection;
 
 namespace ProductManagerApi.Extensions
 {
@@ -7,7 +19,18 @@ namespace ProductManagerApi.Extensions
     {
         public static void RegisterServices(this WebApplicationBuilder builder)
         {
+            var cs = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<ManagerDbContext>(opt => opt.UseSqlServer(cs));
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IRemovedProductRepository, RemovedProductRepository>();
             builder.Services.AddHttpClient<ExternalProductsApiService>();
+            builder.Services.AddAuthentication().AddJwtBearer();
+            builder.Services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssemblyContaining<AuthenticateUser>();
+                cfg.RegisterServicesFromAssemblyContaining<CreateUser>();
+                cfg.RegisterServicesFromAssemblyContaining<CreateRemovedProduct>();
+            });
         }
 
         public static void RegisterEndpointDefinitions(this WebApplication app)

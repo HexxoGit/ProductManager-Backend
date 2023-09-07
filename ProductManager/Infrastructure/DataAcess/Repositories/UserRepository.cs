@@ -12,11 +12,22 @@ namespace Infrastructure.DataAcess.Repositories
         {
             _managerDbContext = context;
         }
-        public async Task<User> FindByName(string username)
+
+        public async Task<User> CreateUser(User user)
         {
-            var user = await _managerDbContext.Users
-                .FirstOrDefaultAsync(x => x.Username == username);
+            _managerDbContext.Users.Add(user);
+            await _managerDbContext.SaveChangesAsync();
             return user;
+        }
+
+        public async Task<User> GetUserById(int id)
+        {
+            return await _managerDbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task<User> GetUserByUsername(string username)
+        {
+            return await _managerDbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
         }
     }
 }

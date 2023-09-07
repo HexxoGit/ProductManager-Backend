@@ -1,9 +1,12 @@
-﻿using Domain.Entities;
+﻿using Application.DTOs.User;
+using Domain.Entities;
 
 namespace Application.Abstractions
 {
     public interface IUserRepository
     {
-        Task<User> FindByName(string username);
+        Task<User> CreateUser(User user);
+        Task<User> GetUserById(int id);
+        Task<User> GetUserByUsername(string username);
     }
 }
