@@ -1,6 +1,4 @@
 ﻿using Application.Features.Users.Request.Commands;
-using Domain.Entities;
-using Infrastructure.Services;
 using MediatR;
 using ProductManagerApi.Abstractions;
 

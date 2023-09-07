@@ -5,7 +5,7 @@ namespace Application.Abstractions
     public interface IRemovedProductRepository
     {
         Task<RemovedProduct> CreateRemovedProduct(RemovedProduct product);
-        Task<ICollection<RemovedProduct>> GetRemovedProducts();
-        Task<ICollection<RemovedProduct>> GetRemovedProductsByUserId(int userId);
+        Task<List<RemovedProduct>> GetRemovedProducts();
+        Task<List<RemovedProduct>> GetRemovedProductsByUsername(string username);
     }
 }

@@ -17,8 +17,8 @@ namespace Application.Features.RemovedProducts.Handlers.CommandHandler
         {
             var removedProduct = new RemovedProduct
             {
-                UserId = request.UserId,
-                ProductId = request.ProductId
+                Username = request.Username,
+                ProductName = request.ProductName
             };
             return await _removedProductRepo.CreateRemovedProduct(removedProduct);
         }

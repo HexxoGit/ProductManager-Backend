@@ -25,7 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="AuxiliarSettings\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

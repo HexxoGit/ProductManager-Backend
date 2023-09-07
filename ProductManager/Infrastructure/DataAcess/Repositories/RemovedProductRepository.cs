@@ -18,14 +18,18 @@ namespace Infrastructure.DataAcess.Repositories
             return product;
         }
 
-        public Task<ICollection<RemovedProduct>> GetRemovedProducts()
+        public Task<List<RemovedProduct>> GetRemovedProducts()
         {
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<RemovedProduct>> GetRemovedProductsByUserId(int userId)
+        public async Task<List<RemovedProduct>> GetRemovedProductsByUsername(string username)
         {
-            throw new NotImplementedException();
+            var removedProducts =  _managerDbContext.RemovedProducts
+                .Where(x => x.Username == username)
+                .ToList();
+            await _managerDbContext.SaveChangesAsync();
+            return removedProducts;
         }
     }
 }

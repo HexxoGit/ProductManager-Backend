@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace Application.Features.RemovedProducts.Handlers.QueriesHandler
 {
-    public class GetRemovedProductsByUserIdHandler : IRequestHandler<GetRemovedProductsByUserId, ICollection<RemovedProduct>>
+    public class GetRemovedProductsByUsernameHandler : IRequestHandler<GetRemovedProductsByUsername, List<RemovedProduct>>
     {
         private readonly IRemovedProductRepository _removedProductRepo;
 
-        public GetRemovedProductsByUserIdHandler(IRemovedProductRepository repo)
+        public GetRemovedProductsByUsernameHandler(IRemovedProductRepository repo)
         {
             _removedProductRepo = repo;
         }
-        public async Task<ICollection<RemovedProduct>> Handle(GetRemovedProductsByUserId request, CancellationToken cancellationToken)
+        public async Task<List<RemovedProduct>> Handle(GetRemovedProductsByUsername request, CancellationToken cancellationToken)
         {
-            return await _removedProductRepo.GetRemovedProductsByUserId(request.UserId);
+            return await _removedProductRepo.GetRemovedProductsByUsername(request.Username);
         }
     }
 }

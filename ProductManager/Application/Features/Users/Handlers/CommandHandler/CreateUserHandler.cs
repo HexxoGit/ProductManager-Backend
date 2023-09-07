@@ -23,7 +23,8 @@ namespace Application.Features.Users.Handlers.CommandHandler
             var newUser = new User
             {
                 Username = request.Username,
-                Password = request.Password
+                Password = request.Password,
+                Role = "ProductManager"
             };
             return await _userRepository.CreateUser(newUser);
         }

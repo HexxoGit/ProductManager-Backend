@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Application.Features.RemovedProducts.Requests.Queries
 {
-    public class GetRemovedProductsByUserId : IRequest<ICollection<RemovedProduct>>
+    public class GetRemovedProductsByUsername : IRequest<List<RemovedProduct>>
     {
-        public int UserId { get; set; }
+        public string Username { get; set; }
     }
 }
