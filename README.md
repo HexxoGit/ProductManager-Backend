@@ -21,6 +21,10 @@ MinimalApi to collect information on Products from an externalApi and work the d
 
 Authentication & Authorization implemented but not working correctly when authorizing JWT on endpoits.
 
+Default user created with DB used to test Login and hardcoded into otherendpoins to represent user authentication.
+Username: FirstUser
+Password: 123
+
 ## Endpoints
 
 All endpoints working accordingly to func:
@@ -49,6 +53,8 @@ All endpoints working accordingly to func:
 
 ## TODO
 
+List of future tasks:
+
     * Fix Authorization
     * Change User model to save hashedpassword
     * Exception Handlers
@@ -56,4 +62,5 @@ All endpoints working accordingly to func:
     * DTOs instead of directly using the entities
     * Refactor so Handlers are Service injected and we can handle the logic on the Service, creating an abstraction layer and going acording to best practises
     * GetAllRecords need to map user
+    * Add Swager or similar tool to facilitate Endpoint sharing and testing.
     * !Testing!
