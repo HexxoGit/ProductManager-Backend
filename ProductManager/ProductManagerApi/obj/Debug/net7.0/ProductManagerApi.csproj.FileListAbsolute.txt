@@ -77,3 +77,8 @@ C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerA
 C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Eduar\Desktop\Git\ProductManager-Backend\ProductManager\ProductManagerApi\obj\Debug\net7.0\ProductManagerApi.MvcApplicationPartsAssemblyInfo.cs

@@ -28,6 +28,11 @@ namespace ProductManagerApi.Extensions
             builder.Services.AddScoped<ICallRecordRepository, CallRecordRepository>();
             builder.Services.AddScoped<CallRecordMiddleware>();
             builder.Services.AddHttpClient<ExternalProductsApiService>();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new() { Title = "ProductManagerApi", Version = "v1" });
+            });
             //builder.Services.AddAuthentication().AddJwtBearer();
 
             builder.Services.AddAuthentication(config =>
