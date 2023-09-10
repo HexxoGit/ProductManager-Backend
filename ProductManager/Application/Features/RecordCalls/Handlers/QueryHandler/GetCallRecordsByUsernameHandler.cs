@@ -1,4 +1,4 @@
-﻿using Application.Abstractions.Persistance;
+﻿using Application.Abstractions.Infrastructure;
 using Application.Features.RecordCalls.Requests.Queries;
 using Domain.Entities;
 using MediatR;
@@ -7,15 +7,15 @@ namespace Application.Features.RecordCalls.Handlers.QueryHandler
 {
     public class GetCallRecordsByUsernameHandler : IRequestHandler<GetCallRecordsByUsername, List<CallRecord>>
     {
-        private readonly ICallRecordRepository _callRecordRepository;
+        private readonly ICallRecordService _callRecordService;
 
-        public GetCallRecordsByUsernameHandler(ICallRecordRepository repo)
+        public GetCallRecordsByUsernameHandler(ICallRecordService service)
         {
-            _callRecordRepository = repo;
+            _callRecordService = service;
         }
         public async Task<List<CallRecord>> Handle(GetCallRecordsByUsername request, CancellationToken cancellationToken)
         {
-            return await _callRecordRepository.GetCallRecordsByUsername(request.Username);
+            return await _callRecordService.GetCallRecordsByUsername(request.Username);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Application.Abstractions.Persistance;
+﻿using Application.Abstractions.Infrastructure;
+using Application.Abstractions.Persistance;
 using Application.Features.RecordCalls.Requests.Commands;
 using Domain.Entities;
 using MediatR;
@@ -7,24 +8,15 @@ namespace Application.Features.RecordCalls.Handlers.CommandHandler
 {
     public class CreateCallRecordHandler : IRequestHandler<CreateCallRecord, CallRecord>
     {
-        private readonly ICallRecordRepository _callRecordRepository;
+        private readonly ICallRecordService _callRecordService;
 
-        public CreateCallRecordHandler(ICallRecordRepository repo)
+        public CreateCallRecordHandler(ICallRecordService service)
         {
-            _callRecordRepository = repo;
+            _callRecordService = service;
         }
         public async Task<CallRecord> Handle(CreateCallRecord request, CancellationToken cancellationToken)
         {
-            var callRecord = new CallRecord
-            {
-                IP = request.IP,
-                DateTime = DateTime.Now,
-                RequestMethod = request.RequestMethod,
-                RequestPath = request.RequestPath,
-                UserId = request.UserId
-            };
-
-            return await _callRecordRepository.CreateCallRecord(callRecord);
+            return await _callRecordService.CreateCallRecord(request);
         }
     }
 }

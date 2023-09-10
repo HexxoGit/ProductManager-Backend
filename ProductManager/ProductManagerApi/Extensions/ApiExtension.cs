@@ -16,6 +16,8 @@ using Infrastructure.Middleware;
 using Application.Abstractions.Persistance;
 using Application.Abstractions.Infrastructure;
 using Application.Services.RemovedProductService;
+using Application.Services.UserService;
+using Application.Services.CallRecordService;
 
 namespace ProductManagerApi.Extensions
 {
@@ -29,6 +31,8 @@ namespace ProductManagerApi.Extensions
             builder.Services.AddScoped<IRemovedProductRepository, RemovedProductRepository>();
             builder.Services.AddScoped<ICallRecordRepository, CallRecordRepository>();
             builder.Services.AddScoped<IRemovedProudctService, RemovedProductService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ICallRecordService, CallRecordService>();
             builder.Services.AddScoped<CallRecordMiddleware>();
             builder.Services.AddHttpClient<ExternalProductsApiService>();
             builder.Services.AddEndpointsApiExplorer();

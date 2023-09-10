@@ -1,4 +1,5 @@
-﻿using Application.Abstractions.Persistance;
+﻿using Application.Abstractions.Infrastructure;
+using Application.Abstractions.Persistance;
 using Application.Features.Users.Request.Queries;
 using Domain.Entities;
 using MediatR;
@@ -7,15 +8,15 @@ namespace Application.Features.Users.Handlers.QueriesHandler
 {
     public class GetUserByIdHandler : IRequestHandler<GetUserById, User>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userService;
 
-        public GetUserByIdHandler(IUserRepository repo)
+        public GetUserByIdHandler(IUserService service)
         {
-            _userRepository = repo;
+            _userService = service;
         }
         public async Task<User> Handle(GetUserById request, CancellationToken cancellationToken)
         {
-            return await _userRepository.GetUserById(request.UserId);
+            return await _userService.GetUserById(request.UserId);
         }
     }
 }

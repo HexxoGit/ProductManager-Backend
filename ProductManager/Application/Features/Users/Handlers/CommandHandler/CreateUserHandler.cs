@@ -1,4 +1,4 @@
-﻿using Application.Abstractions.Persistance;
+﻿using Application.Abstractions.Infrastructure;
 using Application.Features.Users.Request.Commands;
 using Domain.Entities;
 using MediatR;
@@ -7,21 +7,15 @@ namespace Application.Features.Users.Handlers.CommandHandler
 {
     public class CreateUserHandler : IRequestHandler<CreateUser, User>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userService;
 
-        public CreateUserHandler(IUserRepository repo)
+        public CreateUserHandler(IUserService service)
         {
-            _userRepository = repo;
+            _userService = service;
         }
         public async Task<User> Handle(CreateUser request, CancellationToken cancellationToken)
         {
-            var newUser = new User
-            {
-                Username = request.Username,
-                Password = request.Password,
-                Role = "ProductManager"
-            };
-            return await _userRepository.CreateUser(newUser);
+            return await _userService.CreateUser(request);
         }
     }
 }
