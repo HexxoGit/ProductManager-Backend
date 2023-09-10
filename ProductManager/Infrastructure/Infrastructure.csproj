@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -28,6 +28,7 @@
   <ItemGroup>
     <Folder Include="AuxiliarSettings\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Tests\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

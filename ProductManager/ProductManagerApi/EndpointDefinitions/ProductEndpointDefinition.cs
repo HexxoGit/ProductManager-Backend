@@ -15,41 +15,36 @@ namespace ProductManagerApi.EndpointDefinitions
         {
             var products = app.MapGroup("/api/products");
 
-            products.MapGet("/categories", async (HttpContext context, ExternalProductsApiService externalProductsApiService) =>
-            {
-                List<string> categories = await externalProductsApiService.GetAllProductsCategories();
-                await JsonSerializer.SerializeAsync(context.Response.Body, categories);
-            });
+            products.MapGet("/categories", GetCategories);
+            products.MapGet("", GetProducts);//.RequireAuthorization("ProductManager");
+            products.MapGet("/remove", GetRemovedProducts);
+            products.MapPost("/remove", RemoveProduct);
+        }
 
-            /*
-             * TODO: Refactor ter em conta o nome do utilizador diretamente do token
-             */
-            products.MapGet("", async (HttpContext context, /*ClaimsPrincipal user,*/ ExternalProductsApiService externalProductsApiService,
-                    decimal? minPrice, decimal? maxPrice, int? minStock, int? maxStock, string? category) =>
-            {
-                List<ProductDTO> products = await externalProductsApiService.GetAllProducts(
-                     "FirstUser", minPrice, maxPrice, minStock, maxStock, category);
-                await JsonSerializer.SerializeAsync(context.Response.Body, products);
-            });//.RequireAuthorization("ProductManager");
+        private async Task<IResult> GetCategories(ExternalProductsApiService externalProductsApiService)
+        {
+            return TypedResults.Ok(await externalProductsApiService.GetAllProductsCategories());
+        }
 
-            products.MapPost("/remove", async (IMediator mediator, string productName) =>
-            {
-                CreateRemovedProduct cmd = new CreateRemovedProduct();
-                cmd.ProductName = productName;
-                cmd.Username = "FirstUser";
+        private async Task<IResult> GetProducts(ExternalProductsApiService externalProductsApiService,
+                    decimal? minPrice, decimal? maxPrice, int? minStock, int? maxStock, string? category)
+        {
+            return TypedResults.Ok(await externalProductsApiService.GetAllProducts(
+                     "FirstUser", minPrice, maxPrice, minStock, maxStock, category));
+        }
 
-                var removedProduct = await mediator.Send(cmd);
-                return Results.Ok(removedProduct);
-            });
+        private async Task<IResult> RemoveProduct(IMediator mediator, string productName)
+        {
+            CreateRemovedProduct cmd = 
+                new CreateRemovedProduct() { ProductName = productName, Username = "FirstUser" };
+            return TypedResults.Ok(await mediator.Send(cmd));
+        }
 
-            products.MapGet("/remove", async (IMediator mediator) =>
-            {
-                GetRemovedProductsByUsername cmd = new GetRemovedProductsByUsername();
-                cmd.Username = "FirstUser";
-
-                var result = await mediator.Send(cmd);
-                return Results.Ok(result);
-            });
+        private async Task<IResult> GetRemovedProducts(IMediator mediator)
+        {
+            GetRemovedProductsByUsername cmd = 
+                new GetRemovedProductsByUsername { Username = "FirstUser" };      
+            return TypedResults.Ok(await mediator.Send(cmd));
         }
     }
 }

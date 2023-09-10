@@ -10,16 +10,19 @@ namespace ProductManagerApi.EndpointDefinitions
         {
             var callRecords = app.MapGroup("/api/records");
 
-            callRecords.MapGet("", async (IMediator mediator) =>
-            {
-                var result = await mediator.Send(new GetCallRecords());
-                return Results.Ok(result);
-            });
-
-            callRecords.MapGet("/user", async(IMediator mediator) =>
-            {
-
-            });
+            callRecords.MapGet("", GetRecords);
+            callRecords.MapGet("/user", GetRecordsByUser);
         }
+
+        private async Task<IResult> GetRecords(IMediator mediator)
+        {
+            return TypedResults.Ok(await mediator.Send(new GetCallRecords()));
+        }
+
+        private async Task<IResult> GetRecordsByUser(IMediator mediator)
+        {
+            return null;
+        }
+
     }
 }
