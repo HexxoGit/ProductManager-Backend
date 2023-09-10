@@ -29,7 +29,6 @@
     <Folder Include="AuxiliarSettings\" />
     <Folder Include="Migrations\" />
     <Folder Include="Tests\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

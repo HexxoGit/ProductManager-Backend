@@ -1,4 +1,4 @@
-﻿using Application.Abstractions;
+﻿using Application.Abstractions.Persistance;
 using Domain.Entities;
 
 namespace Infrastructure.DataAcess.Repositories

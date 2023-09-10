@@ -1,4 +1,4 @@
-﻿using Application.Abstractions;
+﻿using Application.Abstractions.Persistance;
 using Application.Features.RecordCalls.Requests.Queries;
 using Domain.Entities;
 using MediatR;

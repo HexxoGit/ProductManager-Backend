@@ -1,4 +1,4 @@
-﻿using Application.Abstractions;
+﻿using Application.Abstractions.Persistance;
 using Application.DTOs.Product;
 using Application.DTOs.Product.Responses;
 using Domain.Entities;

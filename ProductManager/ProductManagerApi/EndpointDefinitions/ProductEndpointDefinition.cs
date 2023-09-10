@@ -15,10 +15,10 @@ namespace ProductManagerApi.EndpointDefinitions
         {
             var products = app.MapGroup("/api/products");
 
-            products.MapGet("/categories", GetCategories);
             products.MapGet("", GetProducts);//.RequireAuthorization("ProductManager");
             products.MapGet("/remove", GetRemovedProducts);
             products.MapPost("/remove", RemoveProduct);
+            products.MapGet("/categories", GetCategories);
         }
 
         private async Task<IResult> GetCategories(ExternalProductsApiService externalProductsApiService)

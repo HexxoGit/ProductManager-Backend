@@ -1,5 +1,4 @@
-﻿using Application.Abstractions;
-using Infrastructure.DataAcess.Repositories;
+﻿using Infrastructure.DataAcess.Repositories;
 using Infrastructure.DataAcess;
 using Infrastructure.ExternalServiceIntegration;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +13,9 @@ using Application.Features.RemovedProducts.Requests.Queries;
 using Application.Features.RecordCalls.Requests.Commands;
 using Application.Features.RecordCalls.Requests.Queries;
 using Infrastructure.Middleware;
+using Application.Abstractions.Persistance;
+using Application.Abstractions.Infrastructure;
+using Application.Services.RemovedProductService;
 
 namespace ProductManagerApi.Extensions
 {
@@ -26,6 +28,7 @@ namespace ProductManagerApi.Extensions
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRemovedProductRepository, RemovedProductRepository>();
             builder.Services.AddScoped<ICallRecordRepository, CallRecordRepository>();
+            builder.Services.AddScoped<IRemovedProudctService, RemovedProductService>();
             builder.Services.AddScoped<CallRecordMiddleware>();
             builder.Services.AddHttpClient<ExternalProductsApiService>();
             builder.Services.AddEndpointsApiExplorer();
