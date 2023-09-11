@@ -43,7 +43,7 @@ List of future tasks:
     * Add Swager or similar tool to facilitate Endpoint sharing and testing.
     * !Testing!
 
-List of completed tasks:
+List of completed tasks after delivery:
 
     * Endpoint refactor where every endpoint has a corresponding method so code is better structured.
     * Changed RemodeProduct endpoint from POST to DELETE and changed rout naming so it goes acording to RESTFul best practices.
