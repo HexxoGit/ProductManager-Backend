@@ -1,5 +1,5 @@
-using Infrastructure.Middleware;
 using ProductManagerApi.Extensions;
+using ProductManagerApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.RegisterServices();

@@ -12,7 +12,7 @@ using System.Text;
 using Application.Features.RemovedProducts.Requests.Queries;
 using Application.Features.RecordCalls.Requests.Commands;
 using Application.Features.RecordCalls.Requests.Queries;
-using Infrastructure.Middleware;
+using ProductManagerApi.Middleware;
 using Application.Abstractions.Persistance;
 using Application.Abstractions.Infrastructure;
 using Application.Services.RemovedProductService;

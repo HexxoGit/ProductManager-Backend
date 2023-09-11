@@ -16,8 +16,8 @@ namespace ProductManagerApi.EndpointDefinitions
             var products = app.MapGroup("/api/products");
 
             products.MapGet("", GetProducts);//.RequireAuthorization("ProductManager");
+            products.MapDelete("", RemoveProduct);
             products.MapGet("/remove", GetRemovedProducts);
-            products.MapPost("/remove", RemoveProduct);
             products.MapGet("/categories", GetCategories);
         }
 
