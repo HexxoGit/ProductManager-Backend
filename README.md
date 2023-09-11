@@ -45,10 +45,10 @@ List of future tasks:
 
 List of completed tasks:
 
-    *Endpoint refactor where every endpoint has a corresponding method so code stay better organized.
-    *Changed RemodeProduct endpoint from POST to DELETE and changed rout naming so it goes acording a RESTFul pattern.
-    *Introduced Swagger so endpoints can be used directly instead of requiring a tool like Postman.
-    *Created Services for the corresponding models, where we can handly any necessary logic.
-    *Handlers refactor so instead of having repo injection now the services are being injected.
-    *Changed Middleware from Infrastructure layer to Interface/Api layer to follow a clean architecture.
+    * Endpoint refactor where every endpoint has a corresponding method so code stay better organized.
+    * Changed RemodeProduct endpoint from POST to DELETE and changed rout naming so it goes acording a RESTFul pattern.
+    * Introduced Swagger so endpoints can be used directly instead of requiring a tool like Postman.
+    * Created Services for the corresponding models, where we can handly any necessary logic.
+    * Handlers refactor so instead of having repo injection now the services are being injected.
+    * Changed Middleware from Infrastructure layer to Interface/Api layer to follow a clean architecture.
     *
