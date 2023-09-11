@@ -27,29 +27,7 @@ Password: 123
 
 ## Endpoints
 
-All endpoints working accordingly to func:
-
-    * GET /api/products ->              return a list of products
-        Available filters on request params:
-            *minPrice
-            *maxPrice
-            *minStock
-            *maxStock
-            *category
-            *Page NOT IMPLEMENTED
-            *numPerPage NOT IMPLEMENTED
-    * GET /api/products/categories ->   return a list of categories
-    * POST /api/products/remove ->      Product Name to be removed from product list for the user
-        request param:
-            *productName 
-    * GET /api/products/remove ->       return a list of Removed Products
-
-    * POST /api/user/login ->           return jwt on valid login
-        request body:
-            *Username
-            *Password
-    
-    * GET /api/records ->               return a list of Call Records made to the endpoints
+Can be found at https://localhost:7037/swagger/index.html
 
 ## TODO
 
@@ -64,3 +42,13 @@ List of future tasks:
     * GetAllRecords need to map user
     * Add Swager or similar tool to facilitate Endpoint sharing and testing.
     * !Testing!
+
+List of completed tasks:
+
+    *Endpoint refactor where every endpoint has a corresponding method so code stay better organized.
+    *Changed RemodeProduct endpoint from POST to DELETE and changed rout naming so it goes acording a RESTFul pattern.
+    *Introduced Swagger so endpoints can be used directly instead of requiring a tool like Postman.
+    *Created Services for the corresponding models, where we can handly any necessary logic.
+    *Handlers refactor so instead of having repo injection now the services are being injected.
+    *Changed Middleware from Infrastructure layer to Interface/Api layer to follow a clean architecture.
+    *
